@@ -67,7 +67,7 @@ export default function Home() {
         >
           <div>
             <h1 className={`  text-white`}>
-              Hi, I'm <span className="text-[#915EFF]">Bilal</span>
+              Hi, I&apos;m <span className="text-[#915EFF]">Bilal</span>
             </h1>
             <p className={`  mt-2 text-white-100`}>
               I develop 3D visuals, user <br className="sm:block hidden" />
