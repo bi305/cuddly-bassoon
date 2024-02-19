@@ -8,31 +8,31 @@ import Gear from "@/components/Scene";
 import DragonModel from "@/components/Silver_dragon";
 
 export default function Home() {
-  // useEffect(() => {
-  //   const getLocation = async () => {
-  //     try {
-  //       // Fetching the IP address from the external API
-  //       const api = "https://ipinfo.io/json?token=532545df492f24";
-  //       const response = await fetch(api);
-  //       const data = await response.json();
+  useEffect(() => {
+    const getLocation = async () => {
+      try {
+        // Fetching the IP address from the external API
+        const api = "https://ipinfo.io/json?token=532545df492f24";
+        const response = await fetch(api);
+        const data = await response.json();
    
-  //       // Sending the IP data to your server's endpoint
-  //       const backendResponse = await fetch('http://localhost:3003/location', {
-  //         method: 'POST',
-  //         headers: {
-  //           'Content-Type': 'application/json',
-  //         },
-  //         body: JSON.stringify(data),
-  //       });
+        // Sending the IP data to your server's endpoint
+        const backendResponse = await fetch('http://localhost:3003/location', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        });
   
-  //       const backendMessage = await backendResponse.text();
-  //      } catch (error) {
-  //       console.log("Error:", error);
-  //     }
-  //   };
+        const backendMessage = await backendResponse.text();
+       } catch (error) {
+        console.log("Error:", error);
+      }
+    };
   
-  //   getLocation();
-  // }, []);
+    getLocation();
+  }, []);
   
   return (
     <>
