@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import StarsCanvas from "@/components/Stars";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -20,5 +21,10 @@ export default function App({ Component, pageProps }: AppProps) {
     });
   }, []);
 
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <StarsCanvas />
+      <Component {...pageProps} />
+    </>
+  );
 }
