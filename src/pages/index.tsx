@@ -54,7 +54,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Navbar className="top-2" />
-      <div className="overflow-hidden   w-full">
+      <div className="overflow-hidden   w-full mb-16">
         <MacbookScroll
           title={
             <span>
@@ -74,7 +74,7 @@ export default function Home() {
 
       <Projects />
 
-      <div className="relative w-full h-screen mx-auto ">
+      {/* <div className="relative w-full h-screen mx-auto ">
         <Canvas
           shadows
           dpr={[1, 2]}
@@ -101,7 +101,7 @@ export default function Home() {
 
           <Preload all />
         </Canvas>
-      </div>
+      </div> */}
     </>
   );
 }

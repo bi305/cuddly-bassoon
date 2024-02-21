@@ -70,7 +70,7 @@ export const Menu = ({
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className="relative rounded-full boder border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-center space-x-4 px-8 py-6 "
+      className="relative rounded- rounded-2xl   boder border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-center space-x-4 px-8 py-6 "
     >
       {children}
     </nav>
@@ -85,18 +85,19 @@ export const ProductItem = ({
 }: {
   title: string;
   description: string;
-  href: string;
-  src: string;
+  href?: string;
+  src?: string;
 }) => {
   return (
-    <Link href={href} className="flex space-x-2">
-      <Image
+    // <Link href={href} className="flex space-x-2">
+    <>
+      {/* <Image
         src={src}
         width={140}
         height={70}
         alt={title}
         className="flex-shrink-0 rounded-md shadow-2xl"
-      />
+      /> */}
       <div>
         <h4 className="text-xl font-bold mb-1 text-black dark:text-white">
           {title}
@@ -105,7 +106,8 @@ export const ProductItem = ({
           {description}
         </p>
       </div>
-    </Link>
+    </>
+    // </Link>
   );
 };
 
