@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "../ui/navbar-menu";
 import { cn } from "@/utils/cn";
+import Link from "next/link";
 
 export default function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
@@ -53,13 +54,20 @@ export default function Navbar({ className }: { className?: string }) {
           <button className="p-[3px] relative ">
             <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
             <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
-              linkedIn
+              <Link
+                href="https://www.linkedin.com/in/bilalrazaa/"
+                target="_blank"
+              >
+                linkedIn
+              </Link>
             </div>
           </button>
           <button className="p-[3px] relative">
             <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
             <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
-              Github
+              <Link href="https://github.com/bi305" target="_blank">
+                Github
+              </Link>
             </div>
           </button>
         </div>
@@ -85,22 +93,38 @@ export default function Navbar({ className }: { className?: string }) {
   );
 }
 const MobileMenu = ({ displayAnimation }: any) => {
+  const [showMenu, setShowMenu] = useState(displayAnimation);
+
+  useEffect(() => {
+    if (!displayAnimation) {
+      // Trigger the hide animation first
+      setShowMenu(true);
+      setTimeout(() => setShowMenu(false), 500); // Match the animation duration
+    } else {
+      setShowMenu(true);
+    }
+  }, [displayAnimation]);
+
+  if (!showMenu) return null;
+
   return (
     <div
       className={`flex flex-col  justify-center space-y-4 text-sm   mt-10 bg-black p-5 m-5 rounded-xl menu-enter  ${
-        displayAnimation ? "show " : "hide"
+        displayAnimation ? "enter-menu " : "exit-menu"
       } `}
     >
       <HoveredLink href="/web-dev">Services</HoveredLink>
       <HoveredLink href="/web-dev">projects</HoveredLink>
       <HoveredLink href="/web-dev">Pricing</HoveredLink>
       <div className="space-x-4 ">
-        <button className="p-[3px] relative ">
-          <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
-          <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
-            linkedIn
-          </div>
-        </button>
+        <Link href="https://www.linkedin.com/in/bilalrazaa/" target="_blank">
+          <button className="p-[3px] relative ">
+            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
+            <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
+              linkedIn
+            </div>
+          </button>
+        </Link>
         <button className="p-[3px] relative">
           <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
           <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">

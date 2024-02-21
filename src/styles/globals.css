@@ -82,32 +82,32 @@ body {
 .menu-enter {
   animation: fadeIn 0.5s ease;
 }
-@keyframes dropDown {
+@keyframes slideDown {
   from {
     transform: translateY(-100%);
+    opacity: 0;
   }
   to {
     transform: translateY(0);
+    opacity: 1;
   }
 }
 
-/* Lift up animation */
-@keyframes liftUp {
+@keyframes slideUp {
   from {
     transform: translateY(0);
+    opacity: 1;
   }
   to {
     transform: translateY(-100%);
+    opacity: 0;
   }
 }
 
-/* Class added to show the menu */
-.show {
- 
-  animation: dropDown 0.5s ease-out;
+.menu-enter {
+  animation: slideDown 0.5s ease forwards;
 }
 
-/* Class added to hide the menu */
-.hide {
-  animation: liftUp 0.5s ease-out;
+.menu-exit {
+  animation: slideUp 0.5s ease forwards;
 }
