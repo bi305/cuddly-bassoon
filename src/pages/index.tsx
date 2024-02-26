@@ -24,7 +24,7 @@ export default function Home() {
         <meta name="og:title" content="Bilal Raza Portfolio" />
 
         <meta name="og:url" content="http://www.techmatrix.com" />
-        <meta name="og:image" content="../assets/profile1.jgp" />
+        <meta name="og:image" content="../profile1.jgp" />
         <meta
           name="og:description"
           content="Hi 👋🏻 I'm Bilal Raza  React Front-end dev"
