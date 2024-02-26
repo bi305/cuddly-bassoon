@@ -8,14 +8,14 @@ import {
   MotionValue,
 } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
+import { styles } from "@/styles";
+import SectionWrapper from "@/hoc/SectionWrapper";
 
-export const HeroParallax = ({
+const HeroParallax = ({
   products,
 }: {
   products: {
-    title: string;
-    link: string;
+    title?: string;
     thumbnail: string;
   }[];
 }) => {
@@ -56,8 +56,9 @@ export const HeroParallax = ({
   );
   return (
     <div
+      id="about"
       ref={ref}
-      className="h-[300vh] py-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="h-[300vh] py-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]  mb-20"
     >
       <Header />
       <motion.div
@@ -100,17 +101,21 @@ export const HeroParallax = ({
     </div>
   );
 };
+export default HeroParallax;
 
 export const Header = () => {
   return (
     <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0">
-      <h1 className="text-2xl md:text-7xl font-bold dark:text-white">
-        I&apos;m  <br /> Bilal Raza
-      </h1>
+      <p className={styles.sectionSubText}>Introduction</p>
+      <h2 className={styles.sectionHeadText}>Overview.</h2>
+
       <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
-        We build beautiful products with the latest technologies and frameworks.
-        We are a team of passionate developers and designers that love to build
-        amazing products.
+        I&apos;m a skilled software developer with experience in TypeScript and
+        JavaScript, and expertise in frameworks like React, Node.js, and
+        Three.js. I&apos;m a quick learner and collaborate closely with clients
+        to create efficient, scalable, and user-friendly solutions that solve
+        real-world problems. Let&apos;s work together to bring your ideas to
+        life!
       </p>
     </div>
   );
@@ -121,8 +126,7 @@ export const ProductCard = ({
   translate,
 }: {
   product: {
-    title: string;
-    link: string;
+    title?: string;
     thumbnail: string;
   };
   translate: MotionValue<number>;
@@ -142,13 +146,13 @@ export const ProductCard = ({
         href={'#'}
         className="block group-hover/product:shadow-2xl "
       > */}
-        <Image
-          src={product.thumbnail}
-          height="600"
-          width="600"
-          className="object-cover object-left-top absolute h-full w-full inset-0"
-          alt={product.title}
-        />
+      <Image
+        src={product.thumbnail}
+        height="600"
+        width="600"
+        className="object-cover  absolute h-full w-full inset-0"
+        alt={product?.title || "img"}
+      />
       {/* </Link> */}
       <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div>
       <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">

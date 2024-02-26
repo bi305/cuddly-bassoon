@@ -11,7 +11,10 @@ export default function Navbar({ className }: { className?: string }) {
 
   return (
     <div
-      className={cn("fixed top-10 inset-x-0 max-w-5xl mx-auto z-50", className)}
+      className={cn(
+        "fixed top-10 inset-x-0   sm:max-w-[1200px] mx-auto z-50",
+        className
+      )}
     >
       <Menu setActive={setActive}>
         <div>
@@ -19,34 +22,9 @@ export default function Navbar({ className }: { className?: string }) {
         </div>
         <div className="hidden md:block">
           <div className="flex ">
-            <MenuItem setActive={setActive} active={active} item="Services">
-              <div className="flex flex-col space-y-4 text-sm">
-                <HoveredLink href="/web-dev">Web Development</HoveredLink>
-                <HoveredLink href="/interface-design">
-                  Interface Design
-                </HoveredLink>
-                <HoveredLink href="/seo">
-                  Search Engine Optimization
-                </HoveredLink>
-                <HoveredLink href="/branding">Branding</HoveredLink>
-              </div>
-            </MenuItem>
-            <MenuItem setActive={setActive} active={active} item="projects">
-              <div className="flex flex-col space-y-4 text-sm">
-                <HoveredLink href="/hobby">Hobby</HoveredLink>
-                <HoveredLink href="/individual">Individual</HoveredLink>
-                <HoveredLink href="/team">Team</HoveredLink>
-                <HoveredLink href="/enterprise">Enterprise</HoveredLink>
-              </div>
-            </MenuItem>
-            <MenuItem setActive={setActive} active={active} item="Pricing">
-              <div className="flex flex-col space-y-4 text-sm">
-                <HoveredLink href="/hobby">Hobby</HoveredLink>
-                <HoveredLink href="/individual">Individual</HoveredLink>
-                <HoveredLink href="/team">Team</HoveredLink>
-                <HoveredLink href="/enterprise">Enterprise</HoveredLink>
-              </div>
-            </MenuItem>
+            <MenuItem item="About" id="about" />
+            <MenuItem item="Work" id="work" />
+            <MenuItem item="Contact" id="downloadCv"  filePath='/assets/Bilal-Raza-React_Next-Resume.pdf'/>
           </div>
         </div>
 
@@ -71,7 +49,7 @@ export default function Navbar({ className }: { className?: string }) {
             </div>
           </button>
         </div>
-        <div className="md:hidden text-red-900">
+        <div className="md:hidden">
           <div
             className="sm:z-50 "
             onClick={() => {
@@ -109,13 +87,13 @@ const MobileMenu = ({ displayAnimation }: any) => {
 
   return (
     <div
-      className={`flex flex-col  justify-center space-y-4 text-sm   mt-10 bg-black p-5 m-5 rounded-xl menu-enter  ${
+      className={`flex flex-col  justify-center space-y-4 text-sm   mt-10 bg-black p-5 m-5 rounded-xl menu-enter backdrop-blur-sm bg-purple-200/60   ${
         displayAnimation ? "enter-menu " : "exit-menu"
       } `}
     >
-      <HoveredLink href="/web-dev">Services</HoveredLink>
-      <HoveredLink href="/web-dev">projects</HoveredLink>
-      <HoveredLink href="/web-dev">Pricing</HoveredLink>
+      <MenuItem item="About" id="about" />
+      <MenuItem item="Work" id="work" />
+      <MenuItem item="Contact" id="contact" />
       <div className="space-x-4 ">
         <Link href="https://www.linkedin.com/in/bilalrazaa/" target="_blank">
           <button className="p-[3px] relative ">

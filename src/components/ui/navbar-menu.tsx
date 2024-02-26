@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -14,48 +14,27 @@ const transition = {
 };
 
 export const MenuItem = ({
-  setActive,
-  active,
   item,
-  children,
+  id,
+  filePath,
 }: {
-  setActive: (item: string) => void;
-  active: string | null;
   item: string;
-  children?: React.ReactNode;
+  id: string;
+  filePath?: string;
 }) => {
   return (
-    <div onMouseEnter={() => setActive(item)} className="relative  ">
+    <div className="relative  ">
       <motion.p
         transition={{ duration: 0.3 }}
-        className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white mx-5"
+        className="cursor-pointer hover:opacity-[0.9] mx-5"
       >
-        {item}
-      </motion.p>
-      {active !== null && (
-        <motion.div
-          initial={{ opacity: 0, scale: 0.85, y: 10 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={transition}
+        <a
+          href={id === "downloadCv" ? filePath : `#${id}`}
+          download={id === "downloadCv"}
         >
-          {active === item && (
-            <div className="absolute top-[calc(100%_+_1.7rem)] left-1/2 transform -translate-x-1/2  ">
-              <motion.div
-                transition={transition}
-                layoutId="active" // layoutId ensures smooth animation
-                className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
-              >
-                <motion.div
-                  layout // layout ensures smooth animation
-                  className="w-max h-full p-4 "
-                >
-                  {children}
-                </motion.div>
-              </motion.div>
-            </div>
-          )}
-        </motion.div>
-      )}
+          {item}
+        </a>
+      </motion.p>
     </div>
   );
 };
@@ -67,10 +46,29 @@ export const Menu = ({
   setActive: (item: string | null) => void;
   children: React.ReactNode;
 }) => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      if (scrollTop > 100) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className="relative rounded-2xl broder border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input     px-8 py-6 flex justify-evenly  items-center"
+      className={`relative rounded-2xl border border-transparent  dark:border-purple/[0.2] shadow-input px-4 py-1 flex justify-between  items-center transition-colors	 duration-700	delay-500	
+      ${scrolled ? " text-black" : "text-white"}   ${
+        scrolled ? "backdrop-blur-sm bg-purple-200/60 " : "bg-transparent"
+      } `}
     >
       {children}
     </nav>
