@@ -24,7 +24,7 @@ export default function Navbar({ className }: { className?: string }) {
           <div className="flex ">
             <MenuItem item="About" id="about" />
             <MenuItem item="Work" id="work" />
-            <MenuItem item="Contact" id="downloadCv"  filePath='/assets/Bilal-Raza-React_Next-Resume.pdf'/>
+            <MenuItem item="Contact" id="downloadCv"  filePath='../../Bilal-Raza-React_Next-Resume.pdf'/>
           </div>
         </div>
 
