@@ -12,8 +12,10 @@ export default function Home() {
     <>
       <Head>
         <title>Bilal Raza Portfolio</title>
+
+        <meta name="og:title" content="Bilal Raza Portfolio" />
         <meta
-          name="description"
+          name="og:description"
           content="Hi 👋🏻 I'm Bilal Raza  React Front-end dev"
         />
         <meta
@@ -21,14 +23,10 @@ export default function Home() {
           content="HTML, CSS, JavaScript , React.js , Next.js"
         />
         <meta name="author" content="Bilal Raza" />
-        <meta name="og:title" content="Bilal Raza Portfolio" />
 
-        <meta name="og:url" content="http://www.techmatrix.com" />
-        <meta name="og:image" content="../profile1.jgp" />
-        <meta
-          name="og:description"
-          content="Hi 👋🏻 I'm Bilal Raza  React Front-end dev"
-        />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="../../profile2.JPG" />
+        <meta property="og:url" content="URL_of_your_website_here" />
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
