@@ -18,13 +18,14 @@ export default function Navbar({ className }: { className?: string }) {
     >
       <Menu setActive={setActive}>
         <div>
-          <div className="  text-purple-500  text-2xl">Logo</div>
+          <img src="./assets/logo.png" alt="" width="120px" />
+          {/* <div className="  text-purple-500  text-2xl">Logo</div> */}
         </div>
         <div className="hidden md:block">
           <div className="flex ">
             <MenuItem item="About" id="about" />
             <MenuItem item="Work" id="work" />
-            <MenuItem 
+            <MenuItem
               item="CV"
               id="downloadCv"
               filePath="../../Bilal-Raza-React_Next-Resume.pdf"

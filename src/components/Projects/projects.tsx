@@ -42,22 +42,22 @@ const projects = ({ projects }: Projects) => {
             return (
               <CardContainer
                 className="inter-var     min-w-72   "
-                key={project?.name}
+                key={project?.image}
               >
                 <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
                   <CardItem
                     translateZ="50"
-                    className="text-xl font-bold   text-purple-500"
+                    className="text-xl font-bold  text-neutral-600 dark:text-white"
                   >
                     {project.name}
                   </CardItem>
                   <CardItem
                     as="p"
                     translateZ="60"
-                    className={` text-sm max-w-sm mt-2   text-purple-300 ${
+                    className={` text-neutral-500 text-sm max-w-sm mt-2  dark:text-white ${
                       project.description.length > 300
                         ? "overflow-y-scroll  h-[7rem]"
-                        : " overflow-hidden"
+                        : "overflow-hidden"
                     }  `}
                   >
                     {project.description}
