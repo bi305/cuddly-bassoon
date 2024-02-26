@@ -26,7 +26,7 @@ export default function Home() {
 
         <meta property="og:type" content="website" />
         <meta property="og:image" content="../../profile2.JPG" />
-        <meta property="og:url" content="URL_of_your_website_here" />
+        <meta property="og:url" content="https://techmatrixs.com" />
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
