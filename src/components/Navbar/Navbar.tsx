@@ -18,7 +18,7 @@ export default function Navbar({ className }: { className?: string }) {
     >
       <Menu setActive={setActive}>
         <div>
-          <img src="./assets/logo3.png" alt="" width="90px" height="100px" />
+          <img src="/assets/logo3.png" alt="" width="90px" height="100px" />
         </div>
         <div className="hidden md:block">
           <div className="flex ">
