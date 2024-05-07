@@ -3,9 +3,31 @@ import { HeroParallax } from "@/components/ui/";
 import Navbar from "@/components/Navbar";
 import Projects from "@/components/Projects";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
-import { products, projects, users } from "@/const";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import WorkExperience from "@/components/WorkExperience";
+import { products, projects, users } from "@/const";
+
+// import dynamic from "next/dynamic";
+// const Navbar = dynamic(() => import("@/components/Navbar"), { ssr: false });
+// const Projects = dynamic(() => import("@/components/Projects"), { ssr: false });
+// const ContainerScroll = dynamic(
+//   () =>
+//     import("@/components/ui/container-scroll-animation").then(
+//       (mod) => mod.ContainerScroll
+//     ),
+//   { ssr: false }
+// );
+// const HeroParallax = dynamic(
+//   () => import("@/components/ui").then((mod) => mod.HeroParallax),
+//   { ssr: false }
+// );
+// const TracingBeam = dynamic(
+//   () => import("@/components/ui/tracing-beam").then((mod) => mod.TracingBeam),
+//   { ssr: false }
+// );
+// const WorkExperience = dynamic(() => import("@/components/WorkExperience"), {
+//   ssr: false,
+// });
 
 export default function Home() {
   return (
