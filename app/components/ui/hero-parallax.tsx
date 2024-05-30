@@ -8,8 +8,8 @@ import {
   MotionValue,
 } from "framer-motion";
 import Image from "next/image";
-import { styles } from "@/styles";
-import SectionWrapper from "@/hoc/SectionWrapper";
+import { styles } from "@/app/styles";
+import SectionWrapper from "@/app/hoc/SectionWrapper";
 
 const HeroParallax = ({
   products,
@@ -71,30 +71,22 @@ const HeroParallax = ({
         className=""
       >
         <motion.div className="flex flex-row-reverse space-x-reverse space-x-20 mb-20">
-          {firstRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateX}
-              key={product.title}
-            />
+          {firstRow.map((product, index) => (
+            <ProductCard product={product} translate={translateX} key={index} />
           ))}
         </motion.div>
         <motion.div className="flex flex-row  mb-20 space-x-20 ">
-          {secondRow.map((product) => (
+          {secondRow.map((product, index) => (
             <ProductCard
               product={product}
               translate={translateXReverse}
-              key={product.title}
+              key={index}
             />
           ))}
         </motion.div>
         <motion.div className="flex flex-row-reverse space-x-reverse space-x-20">
-          {thirdRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateX}
-              key={product.title}
-            />
+          {thirdRow.map((product, index) => (
+            <ProductCard product={product} translate={translateX} key={index} />
           ))}
         </motion.div>
       </motion.div>

@@ -1,7 +1,9 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "../ui/navbar-menu";
-import { cn } from "@/utils/cn";
+import { cn } from "@/app/utils/cn";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
@@ -18,6 +20,8 @@ export default function Navbar({ className }: { className?: string }) {
     >
       <Menu setActive={setActive}>
         <div>
+          {/* <Image  src="/assets/Logo3.png" alt="" width={90} height={100}/> */}
+
           <img src="/assets/Logo3.png" alt="" width="90px" height="100px" />
         </div>
         <div className="hidden md:block">

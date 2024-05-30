@@ -1,9 +1,9 @@
-import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
-import { styles } from "@/styles";
+"use client";
+import { CardBody, CardContainer, CardItem } from "@/app/components/ui/3d-card";
+import { styles } from "@/app/styles";
 import { motion } from "framer-motion";
 import Image from "next/image";
-
-import { fadeIn, textVariant } from "@/utils/motion";
+import { fadeIn, textVariant } from "@/app/utils/motion";
 import Link from "next/link";
 
 interface Projects {

@@ -1,5 +1,6 @@
-import { experiences } from "@/const";
-import { styles } from "@/styles";
+"use client";
+import { experiences } from "@/app/const";
+import { styles } from "@/app/styles";
 import { motion } from "framer-motion";
 import {
   VerticalTimeline,
@@ -37,7 +38,7 @@ const workExperience = () => {
           <ExperienceCard key={`experience-${index}`} experience={experience} />
         ))}
       </VerticalTimeline>
-      <Tech />
+      {/* <Tech /> */}
     </>
   );
 };

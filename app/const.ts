@@ -269,10 +269,7 @@ export const experiences = [
 
 ];
 export const technologies = [
-  {
-    name: "HTML 5",
-    icon: './assets/tech/html.png',
-  },
+ 
   {
     name: "CSS 3",
     icon: './assets/tech/html.png',
