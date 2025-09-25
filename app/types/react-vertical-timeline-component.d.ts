@@ -5,6 +5,7 @@ declare module "react-vertical-timeline-component" {
     animate?: boolean;
     className?: string;
     layout?: "1-column" | "2-columns";
+    children?: React.ReactNode;
   }
 
   export interface VerticalTimelineElementProps {
@@ -16,6 +17,7 @@ declare module "react-vertical-timeline-component" {
     iconStyle?: React.CSSProperties;
     position?: "left" | "right";
     visible?: boolean;
+    children?: React.ReactNode; // ✅ this was missing
   }
 
   export const VerticalTimeline: React.FC<VerticalTimelineProps>;
