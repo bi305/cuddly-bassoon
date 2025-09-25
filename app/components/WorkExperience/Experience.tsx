@@ -4,11 +4,14 @@ import { styles } from "@/app/styles";
 import { motion } from "framer-motion";
 import {
   VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
+ } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import Tech from "../Tech";
 import ExperienceCard from "./ExperienceCard";
+
+
+const Timeline = VerticalTimeline as unknown as React.FC<any>;
+
 const workExperience = () => {
   return (
     <>
@@ -34,11 +37,11 @@ const workExperience = () => {
         <p className={`${styles.sectionSubText}  `}>What I have done so far</p>
         <h2 className={`${styles.sectionHeadText} `}>Work Experience.</h2>
       </motion.div>
-      <VerticalTimeline>
+      <Timeline>
         {experiences.map((experience: any, index: any) => (
           <ExperienceCard key={`experience-${index}`} experience={experience} />
         ))}
-      </VerticalTimeline>
+      </Timeline>
       {/* <Tech /> */}
     </>
   );
