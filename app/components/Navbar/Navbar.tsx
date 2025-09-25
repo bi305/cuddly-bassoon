@@ -31,7 +31,7 @@ export default function Navbar({ className }: { className?: string }) {
             <MenuItem
               item="CV"
               id="downloadCv"
-              filePath="../../Bilal-Raza-Resume.pdf"
+              filePath="../../Bilal Raza Senior Front-end Engineer.pdf"
             />
           </div>
         </div>
